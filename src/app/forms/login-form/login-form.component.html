@@ -1,0 +1,29 @@
+<div class="secondary-background font-color-white p-5" style="width: 25vw; min-width: 400px;">
+
+    <h3 style="border-bottom-style: dashed; padding-bottom: 10px;">Log in</h3>
+
+    <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+
+        <label class="mt-3 font-weight-bold" for="username" name="username">Login</label>
+        <input formControlName="username" type="text" class="form-control"
+            [ngClass]="{ 'is-invalid': loginForm.username.touched && loginForm.username.errors != null }" id="username"
+            placeholder="Login" required>
+
+        <div *ngIf="loginForm.username.errors != null" class="invalid-feedback">
+            Username should be given!
+        </div>
+
+        <label class="mt-3 font-weight-bold" for="password" name="password">Password</label>
+        <input formControlName="password" type="password" class="form-control"
+            [ngClass]="{'is-invalid': loginForm.username.touched && loginForm.password.errors != null}" id="password"
+            placeholder="Password" required>
+
+        <div *ngIf="loginForm.password.errors != null" class="invalid-feedback">
+            Password should be given!
+        </div>
+
+        <button class="mt-3 btn btn-secondary " type="submit">Log in</button>
+
+    </form>
+
+</div>

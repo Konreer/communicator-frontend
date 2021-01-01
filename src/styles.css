@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+.app-background{
+
+    /* background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left bottom,
+        color-stop(0, #000000),
+        color-stop(1, #404040)
+    );
+    background-image: -o-linear-gradient(left bottom, #000000 0%, #303030 100%);
+    background-image: -moz-linear-gradient(left bottom, #000000 0%, #303030 100%);
+    background-image: -webkit-linear-gradient(left bottom, #000000 0%, #303030 100%);
+    background-image: -ms-linear-gradient(left bottom, #000000 0%, #303030 100%);
+    background-image: linear-gradient(to left bottom, #000000 0%, #303030 100%); */
+    background:
+    linear-gradient(to left top, rgba(40, 44, 44, 1) 0%/*bottom-right color*/, 	rgb(65,65,65) 50% /*middle color*/, rgba(46, 49, 49, 1) 100% /*top-left color*/),
+    linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+}
+
+.secondary-background{
+    background-color: rgba(71, 73, 75, 0.67);
+}
+
+.font-color-white{
+    color: white;
+}
