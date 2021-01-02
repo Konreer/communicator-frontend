@@ -1,0 +1,12 @@
+<div class="secondary-background font-color-white p-5" style="width: 45vw; min-width: 400px;">
+    <h3 style="border-bottom-style: dashed; padding-bottom: 10px;">Register</h3>
+
+    <form class="mt-3" [formGroup]="registrationFormGroup" (ngSubmit)="onSubmit()">
+        <app-profile-form formControlName="profile"></app-profile-form>
+        <app-password-form formControlName="password"></app-password-form>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-secondary mt-5">Submit</button>
+        </div>
+    </form>
+</div>
