@@ -5,7 +5,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 

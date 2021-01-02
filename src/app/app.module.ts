@@ -3,20 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
-import { SharedModule } from './forms/shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RegisterFormComponent } from './forms/register-form/register-form.component';
 import { MyFormsModule } from './forms/forms.module';
+import { CommunicationModule } from './communication/communication.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MyFormsModule,
+    CommunicationModule,
     SharedModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginFormComponent},

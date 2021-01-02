@@ -37,7 +37,7 @@ export class LoginFormComponent implements OnInit {
     this.authService.login(this.loginFormGroup.value).subscribe({
       next: response => {
         this.tokenService.saveTokens(response);
-        // this.router.navigate(['/news']);
+        this.router.navigate(['/menu']);
       },
       error: err => console.log(err)
     })
