@@ -13,3 +13,13 @@
 .font-color-white{
     color: white;
 }
+
+.h-90{
+    height: 90%;
+}
+
+.secondary-border{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #47494B;
+}

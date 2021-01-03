@@ -1,3 +1,36 @@
-<div class="secondary-background font-color-white p-5" style="width: 75vw; min-width: 400px;">
-    <app-search-bar (search)="filterUserContacts($event)"></app-search-bar>
+<div class="font-color-white" style="width: 90vw; height: 90vh">
+
+    <div class="row h-100">
+
+        <!-- CZEŚĆ Z LEWEJ - SZUKAJKA I LISTA FRIENDSÓW  -->
+        <div class="col-2 h-100 overflow-hidden">
+            <app-search-bar (search)="filterUserContacts($event)"></app-search-bar>
+
+            <!-- TU WSTAWIĆ KOMPONENT Z LISTĄ ZNAJOMYCH -->
+            <div class="secondary-background secondary-border h-100 mt-5">
+            
+            </div>
+        </div>
+
+
+        <!-- CZĘŚĆ GŁÓWNA -->
+        <div class="col-10 h-100 overflow-hidden">
+
+            <!-- IKONKI W PRAWYM GÓRNYM ROGU (TYPU WYLOGUJ ITD) -->
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-secondary rounded-circle mr-2"> <fa-icon [icon]="faUserPlus" size="lg" ></fa-icon></button>
+                <button class="btn btn-secondary rounded-circle mr-2"> <fa-icon [icon]="faCog" size="lg" ></fa-icon></button>
+                <button class="btn btn-secondary rounded-circle"> <fa-icon [icon]="faSignOutAlt" size="lg" ></fa-icon></button>
+            </div>
+
+
+            <!-- ŚRODEK - TU WSTAWIĆ KOMPONENT Z CZATEM -->
+            <div class="secondary-background secondary-border h-100 mt-5">
+                
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

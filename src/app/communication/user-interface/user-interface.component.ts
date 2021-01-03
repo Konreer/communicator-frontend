@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCog, faSignOutAlt, faUserPlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-interface',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-interface.component.css']
 })
 export class UserInterfaceComponent implements OnInit {
+
+  faSignOutAlt: IconDefinition = faSignOutAlt;
+  faCog: IconDefinition = faCog;
+  faUserPlus: IconDefinition = faUserPlus;
 
   constructor() { }
 
