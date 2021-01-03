@@ -1,5 +1,6 @@
 <div class="d-flex justify-content-center" style="min-height: 10px;">
     <input class="form-control" [(ngModel)]="searchWord" type="text" placeholder="Search...">
-    <a href="#"  class="align-self-center" style="color: white;"><fa-icon (click)="keywordSubmitted()"  class="ml-2" [icon]="faSearch" size="lg"></fa-icon></a>
-    
+    <button (click)="keywordSubmitted()" class="btn btn-secondary align-self-center" >
+        <fa-icon [icon]="faSearch" size="lg" ></fa-icon>
+    </button>
 </div>
