@@ -3,12 +3,12 @@
     <div class="row h-100">
 
         <!-- CZEŚĆ Z LEWEJ - SZUKAJKA I LISTA FRIENDSÓW  -->
-        <div class="col-2 h-100 overflow-hidden">
+        <div class="col-2 h-100 overflow-hidden" style="padding: 0px">
             <app-search-bar (search)="filterUserContacts($event)"></app-search-bar>
 
             <!-- TU WSTAWIĆ KOMPONENT Z LISTĄ ZNAJOMYCH -->
             <div class="secondary-background secondary-border h-100 mt-5">
-            
+              <app-friend-list></app-friend-list>
             </div>
         </div>
 
@@ -26,11 +26,11 @@
 
             <!-- ŚRODEK - TU WSTAWIĆ KOMPONENT Z CZATEM -->
             <div class="secondary-background secondary-border h-100 mt-5">
-                
+
             </div>
 
         </div>
 
     </div>
 
-</div>
+</div

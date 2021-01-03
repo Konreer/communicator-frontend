@@ -1,5 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {TokenService} from '../../core/token.service';
+
+class Friend {
+  contactId: number;
+  contactName: string;
+  contactSurname: string;
+  avatarUrl: string;
+}
 
 @Component({
   selector: 'app-friend-list',
@@ -7,20 +16,19 @@ import {HttpClientModule} from '@angular/common/http';
   styleUrls: ['./friend-list.component.css']
 })
 export class FriendListComponent implements OnInit {
-  friends: any = [{ name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }];
-  hover = false;
+  // friends: any = [{ name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }];
+  friends: Friend[];
+  private http: HttpClient;
 
-  constructor() {
+
+  constructor(private tokenService: TokenService) {
+  }
+  getFriends(): Observable<Friend[]> {
+    return this.http.get<Friend[]>('localhost:8080/' + this.tokenService.getUserId() + '/friends');
   }
 
   ngOnInit(): void {
-
-  }
-
-  colorchange(index) {
-    this.hover = true;
-    this.friends[index].backgroundColor = 'black';
-
+    this.getFriends();
   }
 
   costam() {
