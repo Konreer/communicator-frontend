@@ -3,13 +3,21 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { UserInterfaceComponent } from './user-interface/user-interface.component';
+import { FriendListComponent } from './friend-list/friend-list.component';
+import { AddFriendComponent } from './add-friend/add-friend.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LogOutComponent } from './log-out/log-out.component';
 
 
 @NgModule({
   declarations: [
-      UserInterfaceComponent
-  ],
+      UserInterfaceComponent,
+      FriendListComponent,
+      AddFriendComponent,
+      LogOutComponent
+    ],
   imports: [
+    NgbModule,
     CommonModule,
     SharedModule,
     RouterModule.forChild(
@@ -19,7 +27,8 @@ import { UserInterfaceComponent } from './user-interface/user-interface.componen
     )
   ],
   exports: [
-      UserInterfaceComponent
+      UserInterfaceComponent,
+      FriendListComponent
   ]
 })
 export class CommunicationModule { }

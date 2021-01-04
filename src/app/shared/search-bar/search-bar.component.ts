@@ -10,6 +10,7 @@ import { faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 export class SearchBarComponent implements OnInit {
 
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  @Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
 
   faSearch: IconDefinition = faSearch;
   searchWord: string = '';
@@ -21,6 +22,10 @@ export class SearchBarComponent implements OnInit {
 
   keywordSubmitted(): void{
     this.search.emit(this.searchWord);
+  }
+
+  keywordChanged(): void{
+    this.valueChanged.emit(this.searchWord);
   }
 
 }

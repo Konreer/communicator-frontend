@@ -7,8 +7,8 @@
             <app-search-bar (search)="filterUserContacts($event)"></app-search-bar>
 
             <!-- TU WSTAWIĆ KOMPONENT Z LISTĄ ZNAJOMYCH -->
-            <div class="secondary-background secondary-border h-90 mt-5">
-            
+            <div class="secondary-background secondary-border h-90 mt-5 p-0">
+                <app-friend-list></app-friend-list>
             </div>
         </div>
 
@@ -18,9 +18,9 @@
 
             <!-- IKONKI W PRAWYM GÓRNYM ROGU (TYPU WYLOGUJ ITD) -->
             <div class="d-flex justify-content-end">
-                <button class="btn btn-secondary rounded-circle mr-2"> <fa-icon [icon]="faUserPlus" size="lg" ></fa-icon></button>
+                <add-friend-button></add-friend-button>
                 <button class="btn btn-secondary rounded-circle mr-2"> <fa-icon [icon]="faCog" size="lg" ></fa-icon></button>
-                <button class="btn btn-secondary rounded-circle"> <fa-icon [icon]="faSignOutAlt" size="lg" ></fa-icon></button>
+                <app-log-out></app-log-out>
             </div>
 
 
@@ -34,3 +34,5 @@
     </div>
 
 </div>
+
+

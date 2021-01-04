@@ -1,0 +1,11 @@
+<div class="secondary-background font-color-white"
+     style="overflow-y: scroll; height:100%; max-height: inherit;">
+  <h2>Friends</h2>
+  <ul style="padding: 0px" class="contacts">
+      <li class="friend friend.element" style="list-style:none" (click)="costam()"
+        *ngFor="let friend of friends">
+        <img class="avatar" src="https://static.wikia.nocookie.net/james-camerons-avatar/images/d/d4/Neytiri_Profil.jpg/revision/latest?cb=20100226001342&path-prefix=pl">
+        <b>{{friend.name}} {{friend.surname}}</b>
+      </li>
+  </ul>
+</div>
