@@ -7,6 +7,7 @@ import { FriendListComponent } from './friend-list/friend-list.component';
 import { AddFriendComponent } from './add-friend/add-friend.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LogOutComponent } from './log-out/log-out.component';
+import { InvitationsComponent } from './invitations/invitations.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { LogOutComponent } from './log-out/log-out.component';
       UserInterfaceComponent,
       FriendListComponent,
       AddFriendComponent,
-      LogOutComponent
+      LogOutComponent,
+      InvitationsComponent
     ],
   imports: [
     NgbModule,

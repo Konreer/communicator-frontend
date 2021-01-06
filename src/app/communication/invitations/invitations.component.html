@@ -1,0 +1,31 @@
+<button (click)="openModal(content)" class="btn btn-secondary rounded-circle mr-3"> 
+    <fa-icon [icon]="faUserFriends" size="lg" ></fa-icon>
+    <span class="badge badge-light">{{invitationList.length}}</span>
+</button>
+
+<ng-template #content let-modal>
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Find friend</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+
+    <div class="modal-body">
+      <ul class="list-group list-group-flush">
+        <!-- <p *ngIf="!possibleFriendsList || !possibleFriendsList.length" class="text-center text-muted mt-4">Nothing found</p>
+
+        <li (click)="setSelectedPersonId(friend.id)" *ngFor="let friend of possibleFriendsList" 
+        class="list-group-item" [ngStyle]="setBackgroundColor(friend.id)">
+          {{friend.name + ' ' + friend.surname}}</li> -->
+
+      </ul>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-secondary">Add friend</button>
+    </div>
+
+  </ng-template>
