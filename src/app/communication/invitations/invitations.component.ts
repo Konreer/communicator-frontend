@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { faUserFriends, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/shared/user';
-import { WebSocketService } from '../shared/websocket.service';
+import { CommunicationService } from '../shared/communication.service';
 
 @Component({
   selector: 'app-invitations-button',
@@ -13,12 +13,18 @@ export class InvitationsComponent implements OnInit {
 
   faUserFriends: IconDefinition = faUserFriends;
 
-  invitationList: User[] = []
+  // invitationList: User[] = []
+  invitationList: number[] = []
 
-  constructor(private modalService: NgbModal, private websocketService: WebSocketService) { }
+  constructor(private modalService: NgbModal, private communicationService: CommunicationService) { }
 
   ngOnInit(): void {
-    this.websocketService.connectToWebSocket();
+    this.communicationService.listenToInvitations().subscribe({
+        next: response => {
+          console.log(response);
+          this.invitationList.push(response);},
+        error: err => console.log(err)
+      })
   }
 
   

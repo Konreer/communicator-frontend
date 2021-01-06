@@ -35,9 +35,11 @@ export class AddFriendComponent implements OnInit {
   }
 
   sendInvitationToFriendsList(): void{
-    this.communicationService.sendInvitationToFriendsList(this.tokenService.getUserId(), this.selectedPersonId).subscribe({
-      error: err => console.log(err)
-    })
+    // this.communicationService.sendInvitationToFriendsList(this.tokenService.getUserId(), this.selectedPersonId).subscribe({
+    //   error: err => console.log(err)
+    // })
+
+    this.communicationService.sendInvitationToFriendsList(this.tokenService.getUserId(), this.selectedPersonId);
   }
 
   setSelectedPersonId(id: number): void{
