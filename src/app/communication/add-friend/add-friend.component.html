@@ -19,8 +19,11 @@
 
         <li (click)="setSelectedPersonId(friend.id)" *ngFor="let friend of possibleFriendsList" 
         class="list-group-item" [ngStyle]="setBackgroundColor(friend.id)">
-          {{friend.name + ' ' + friend.surname}}</li>
-
+          <div class="d-flex">
+            <div class="align-self-center mr-2"><img class="avatar" [src]="friend.avatarUrl"/></div>
+            <div class="align-self-center"><h6>{{friend.name + ' ' + friend.surname}}</h6></div>
+          </div>
+        </li>
       </ul>
     </div>
 

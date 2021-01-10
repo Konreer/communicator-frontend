@@ -19,7 +19,7 @@ export class FriendListComponent implements OnInit {
   friends: any = [{ name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }, { name: 'koskos', surname: 'psikuta' }];
   // friends: Friend[];
   
-
+ 
   constructor(private tokenService: TokenService, private http: HttpClient) {
   }
 
@@ -30,8 +30,6 @@ export class FriendListComponent implements OnInit {
   getFriends(): Observable<Friend[]> {
     return this.http.get<Friend[]>('localhost:8080/' + this.tokenService.getUserId() + '/friends');
   }
-
-
 
   costam() {
 

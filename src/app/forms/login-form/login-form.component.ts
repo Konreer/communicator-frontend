@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import { TokenService } from 'src/app/core/token.service';
+import { WebSocketService } from 'src/app/core/websocket.service';
 
 @Component({
   selector: 'app-login-form',

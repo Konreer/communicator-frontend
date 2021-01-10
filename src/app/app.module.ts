@@ -12,6 +12,7 @@ import { CommunicationModule } from './communication/communication.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { JwtInterceptor } from './shared/jwt.interceptor';
+import { RxStompService } from '@stomp/ng2-stompjs';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { JwtInterceptor } from './shared/jwt.interceptor';
   ],
   providers: [
     NgbActiveModal,
+    RxStompService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]

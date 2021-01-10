@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { WebSocketService } from './websocket.service';
 import { IAuthenticationData } from '../forms/shared/authenticationData';
 
 import { Tokens } from '../shared/tokens';
@@ -16,7 +17,7 @@ export class AuthService {
 
   private appUrl = 'http://localhost:8080/';
 
-  constructor(private http: HttpClient, private tokenService: TokenService, private router: Router) { }
+  constructor(private http: HttpClient, private tokenService: TokenService, private router: Router, private webSocketService: WebSocketService) { }
 
   registerUser(userData: User): Observable<number> {
     return this.http.post<number>(this.appUrl + "security/register", userData).pipe(
@@ -38,6 +39,7 @@ export class AuthService {
 
   logout(): void {
     this.tokenService.removeTokens();
+    this.webSocketService.deactivateRxStomp();
     this.router.navigate(['/login']);
   }
 

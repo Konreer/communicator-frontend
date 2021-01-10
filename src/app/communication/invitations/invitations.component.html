@@ -6,7 +6,7 @@
 <ng-template #content let-modal>
 
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Find friend</h4>
+      <h4 class="modal-title" id="modal-basic-title">Invitations</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -15,17 +15,24 @@
 
     <div class="modal-body">
       <ul class="list-group list-group-flush">
-        <!-- <p *ngIf="!possibleFriendsList || !possibleFriendsList.length" class="text-center text-muted mt-4">Nothing found</p>
+        <p *ngIf="!invitationList || !invitationList.length" class="text-center text-muted mt-4">Nothing found</p>
 
-        <li (click)="setSelectedPersonId(friend.id)" *ngFor="let friend of possibleFriendsList" 
-        class="list-group-item" [ngStyle]="setBackgroundColor(friend.id)">
-          {{friend.name + ' ' + friend.surname}}</li> -->
+        <li *ngFor="let friend of invitationList" class="list-group-item d-flex justify-content-between">
+          <div class="d-flex">
+            <div class="align-self-center mr-2"><img class="avatar" [src]="friend.avatarUrl"/></div>
+            <div class="align-self-center"><h6>{{friend.name + ' ' + friend.surname}}</h6></div>
+          </div>
+          
+          <div class="align-self-center">
+            <button (click)="acceptInvitation(friend.id)" class="btn btn-success btn-sm rounded-circle mr-3"> 
+              <fa-icon [icon]="faCheck" size="sm" ></fa-icon>
+            </button>
+            <button (click)="rejectInvitation(friend.id)" class="btn btn-danger btn-sm rounded-circle"> 
+              <fa-icon [icon]="faTimesCircle" size="sm" ></fa-icon>
+            </button>
+          </div>
+        </li>
 
       </ul>
     </div>
-
-    <div class="modal-footer">
-      <button class="btn btn-secondary">Add friend</button>
-    </div>
-
   </ng-template>

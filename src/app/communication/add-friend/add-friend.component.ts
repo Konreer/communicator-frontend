@@ -35,10 +35,7 @@ export class AddFriendComponent implements OnInit {
   }
 
   sendInvitationToFriendsList(): void{
-    // this.communicationService.sendInvitationToFriendsList(this.tokenService.getUserId(), this.selectedPersonId).subscribe({
-    //   error: err => console.log(err)
-    // })
-
+    this.modalService.dismissAll();
     this.communicationService.sendInvitationToFriendsList(this.tokenService.getUserId(), this.selectedPersonId);
   }
 
@@ -49,6 +46,5 @@ export class AddFriendComponent implements OnInit {
   setBackgroundColor(id: number): any{
     return id === this.selectedPersonId ? {'background-color':'#a6a6a7', 'color': 'white'} : {'background-color':'white', 'color': 'black'};
   }
-
 
 }
