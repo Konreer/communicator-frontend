@@ -1,11 +1,17 @@
 <div class="secondary-background font-color-white"
-     style="overflow-y: scroll; height:100%; max-height: inherit;">
+     style="text-align: center; box-sizing: content-box; max-width:inherit; height:100%; border-radius: 25px">
   <h2>Friends</h2>
-  <ul style="padding: 0px" class="contacts">
-      <li class="friend friend.element" style="list-style:none" (click)="costam()"
-        *ngFor="let friend of friends">
-        <img class="avatar" src="https://static.wikia.nocookie.net/james-camerons-avatar/images/d/d4/Neytiri_Profil.jpg/revision/latest?cb=20100226001342&path-prefix=pl">
-        <b>{{friend.name}} {{friend.surname}}</b>
-      </li>
+  <ul *ngIf="conversations && conversations.length" style="padding: 0px; height: 94%;" class="mb-5 contacts">
+    <li class="friend friend.element" style="list-style:none; margin: auto; overflow-y: scroll; height: 100%"
+        *ngFor="let conversation of conversations; index as i">
+      <a (click)="costam(i)">
+        <img class="avatar" [src]="conversation.avatarUrl">
+        <b>{{conversation.conversationName}}</b>
+        <div class="d-flex justify-content-center">
+            <p class="justify-content-center" style="overflow: hidden; margin:auto; text-overflow: ellipsis; white-space: nowrap; width: 50%;">
+              {{conversation.lastMessage}}</p>
+        </div>
+      </a>
+    </li>
   </ul>
 </div>
