@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { faCog, faSignOutAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import {Conversation} from '../friend-list/friend-list.component';
+import {ChatComponent} from '../chat/chat.component';
 
 @Component({
   selector: 'app-user-interface',
@@ -8,7 +10,7 @@ import { faCog, faSignOutAlt, IconDefinition } from '@fortawesome/free-solid-svg
 })
 export class UserInterfaceComponent implements OnInit {
 
-
+  @ViewChild(ChatComponent) child: ChatComponent;
   faCog: IconDefinition = faCog;
 
   constructor() { }
@@ -18,5 +20,9 @@ export class UserInterfaceComponent implements OnInit {
 
   filterUserContacts(userSearch: string): void{
     console.log(userSearch);
+  }
+
+  selectConversation(conversation: Conversation) {
+    this.child.showConversation(conversation);
   }
 }

@@ -8,7 +8,7 @@
 
             <!-- TU WSTAWIĆ KOMPONENT Z LISTĄ ZNAJOMYCH -->
             <div class="secondary-background secondary-border h-90 mt-5 p-0">
-                <app-friend-list></app-friend-list>
+                <app-friend-list (conversationSelected)="selectConversation($event)"></app-friend-list>
             </div>
         </div>
 

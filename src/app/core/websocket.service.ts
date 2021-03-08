@@ -35,16 +35,17 @@ export class WebSocketService implements OnDestroy {
   }
 
   subscribeToWebSocket<T>(destination: string): Observable<T>{
-    if(!this.rxStomp.connected()){this.initWebSocket(); }
+    if (!this.rxStomp.connected()){this.initWebSocket(); }
     return this.rxStomp.watch(destination).pipe(
       map(response  => JSON.parse(response.body))
     );
   }
 
   publishToWebSocket(destination: string, body: any): void{
-    if(!this.rxStomp.connected()){this.initWebSocket(); }
-    const messageToSend: WSMessage = {authToken: `Bearer ${this.tokenService.getTokens().accessToken}`, message: body}
-    this.rxStomp.publish({destination: destination, body: JSON.stringify(messageToSend)});
+    if (!this.rxStomp.connected()){this.initWebSocket(); }
+    console.log(JSON.stringify(body));
+    const messageToSend: WSMessage = {authToken: `Bearer ${this.tokenService.getTokens().accessToken}`, message: body};
+    this.rxStomp.publish({destination, body: JSON.stringify(messageToSend)});
   }
 
 }

@@ -1,0 +1,32 @@
+<div #chat [scrollTop]="chat.scrollHeight " class="chat">
+
+  <div *ngFor="let message of messages;  index as i">
+    <div *ngIf="message.ownerId==userId; then right else left"></div>
+    <ng-template #left>
+      <div class="message sol">
+        <img class="avatar-conversation" src="{{message.avatarUrl}}">
+        <div class="resim">
+        </div>
+
+        <div class="messageText">
+          <p style="word-wrap: break-word;">{{message.text}}</p>
+        </div>
+        <p style="margin-left: 40px">{{message.date | date: 'MMM d, y, H:mm:ss'}}</p>
+      </div>
+    </ng-template>
+    <ng-template #right>
+      <div class="message sag">
+        <div class="messageText">
+          <p style="word-wrap: break-word;">{{message.text}}</p>
+        </div>
+        <div class="resim"></div>
+        <p style="margin-right: 40px">{{message.date | date: 'MMM d, y, H:mm:ss'}}</p>
+      </div>
+
+    </ng-template>
+  </div>
+</div>
+<div *ngIf="activeConversation" style="margin: auto;
+  width: 50%; height: 10%">
+  <textarea class="chat-input" (keydown.enter)="sendMessage($event)"></textarea>
+</div>

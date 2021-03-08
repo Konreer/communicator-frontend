@@ -30,7 +30,7 @@ export class InvitationsComponent implements OnInit, OnDestroy {
     this.communicationService.getAllInvittations(this.tokenService.getUserId()).subscribe({
       next: response => this.invitationList = response,
       error: err => console.log(err)
-    })
+    });
   }
 
   ngOnDestroy(): void {

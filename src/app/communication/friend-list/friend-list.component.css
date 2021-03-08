@@ -3,6 +3,11 @@
   padding-bottom: 5%;
 }
 
-.friend.element:hover{
+.element{
+  height: auto !important;
+}
+
+.element:hover{
   background-color: rgba(78,84,97,1);
+  border-radius: 25px;
 }
